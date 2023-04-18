@@ -33,11 +33,11 @@ def show(text):
             if date in Note.Note.get_date(notes):
                 print(Note.Note.map_note(notes))
     if logic == True:
-        print('Нет ни одной заметки...')
+        print('Заметки отсутствуют...')
 
 
 def id_edit_del_show(text):
-    id = input('Введите id необходимой заметки: ')
+    id = input('Введите id требуемой  заметки: ')
     array = writeToFile.read_file()
     logic = True
     for notes in array:
@@ -55,5 +55,5 @@ def id_edit_del_show(text):
             if text == 'show':
                 print(Note.Note.map_note(notes))
     if logic == True:
-        print('Такой заметки нет, возможно, вы ввели неверный id')
+        print('Такая заметка не существует или вы ввели неверный id')
     writeToFile.write_file(array, 'a')
